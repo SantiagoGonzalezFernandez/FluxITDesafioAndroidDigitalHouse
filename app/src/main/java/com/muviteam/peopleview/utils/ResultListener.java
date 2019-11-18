@@ -1,4 +1,4 @@
-package com.muviteam.muviapp.utils;
+package com.muviteam.peopleview.utils;
 
 public interface ResultListener<T> {
 

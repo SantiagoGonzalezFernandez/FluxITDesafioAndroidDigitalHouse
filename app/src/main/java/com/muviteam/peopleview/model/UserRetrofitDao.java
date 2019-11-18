@@ -1,18 +1,18 @@
-package com.muviteam.muviapp.model;
+package com.muviteam.peopleview.model;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class PeliculaRetrofitDao {
+public class UserRetrofitDao {
 
     private Retrofit retrofit;
-    protected Service peliculasService;
+    protected Service usersService;
 
-    public PeliculaRetrofitDao(String baseURL) {
+    public UserRetrofitDao(String baseURL) {
         retrofit = new Retrofit.Builder()
                 .baseUrl(baseURL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        peliculasService = retrofit.create(Service.class);
+        usersService = retrofit.create(Service.class);
     }
 }

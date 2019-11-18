@@ -19,7 +19,7 @@
             android:padding="10dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/CardItemUser_CircleImageView_ImagenUser"
+                android:id="@+id/CardItemUser_CircleImageView_AvatarUser"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:src="@mipmap/ic_launcher" />

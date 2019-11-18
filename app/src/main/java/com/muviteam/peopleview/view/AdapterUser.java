@@ -1,6 +1,5 @@
-package com.muviteam.peopleview;
+package com.muviteam.peopleview.view;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.muviteam.peopleview.R;
+import com.muviteam.peopleview.model.data.User;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,10 +49,8 @@ public class AdapterUser extends RecyclerView.Adapter<AdapterUser.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-
         User userMostrado = userList.get(position);
         holder.cargarUser(userMostrado);
-
     }
 
     @Override
@@ -73,8 +72,8 @@ public class AdapterUser extends RecyclerView.Adapter<AdapterUser.MyViewHolder> 
         }
 
         public void cargarUser(User user){
-            Glide.with(circleImageViewAvatarUser.getContext()).load(user.getStringAvatarUrl()).placeholder(R.drawable.load).error(R.drawable.load).into(circleImageViewAvatarUser);
-            textViewUsername.setText(user.getStringUsername());
+            Glide.with(circleImageViewAvatarUser.getContext()).load(user.getImagenDao().getThumbnail()).placeholder(R.drawable.load).error(R.drawable.load).into(circleImageViewAvatarUser);
+            textViewUsername.setText(user.getLoginDao().getStringUsername());
         }
     }
 

@@ -1,0 +1,65 @@
+package com.muviteam.peopleview.view;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.os.Bundle;
+
+import com.muviteam.peopleview.R;
+import com.muviteam.peopleview.controller.ControllerUser;
+import com.muviteam.peopleview.model.data.User;
+import com.muviteam.peopleview.utils.ResultListener;
+
+import java.util.List;
+
+public class MainActivity extends AppCompatActivity implements AdapterUser.ListenerDelAdapter {
+
+    private RecyclerView recyclerViewUsers;
+    private AdapterUser adapterUser;
+    private ControllerUser controllerUser;
+    private ListenerDeLaActivity listenerDeLaActivity;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        encontrarComponentes();
+        reconocerAdaptersYController();
+        traerUsers();
+        configurarRecyclerView();
+    }
+
+    private void encontrarComponentes() {
+        recyclerViewUsers = findViewById(R.id.MainActivity_RecyclerView_Users);
+    }
+
+    private void reconocerAdaptersYController(){
+        adapterUser = new AdapterUser(this);
+        controllerUser = new ControllerUser();
+    }
+
+    private void configurarRecyclerView(){
+        recyclerViewUsers.setLayoutManager(new LinearLayoutManager(this, recyclerViewUsers.VERTICAL,false));
+        recyclerViewUsers.setAdapter(adapterUser);
+    }
+
+    public void traerUsers() {
+        controllerUser.traerUser(new ResultListener<List<User>>() {
+            @Override
+            public void finish(List<User> result) {
+                adapterUser.setUserList(result);
+            }
+        });
+    }
+
+    @Override
+    public void informarUser(User user) {
+        listenerDeLaActivity.recibirUser(user);
+    }
+
+    public interface ListenerDeLaActivity {
+        public void recibirUser(User user);
+    }
+}

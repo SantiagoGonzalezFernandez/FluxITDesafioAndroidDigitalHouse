@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.muviteam.peopleview.R;
 import com.muviteam.peopleview.controller.ControllerUser;
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements AdapterUser.Liste
             @Override
             public void finish(List<User> result) {
                 adapterUser.setUserList(result);
+                Toast.makeText(MainActivity.this, "EXITO", Toast.LENGTH_SHORT).show();
             }
         });
     }

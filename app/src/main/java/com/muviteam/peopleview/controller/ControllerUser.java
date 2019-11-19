@@ -8,6 +8,7 @@ import java.util.List;
 
 public class ControllerUser {
 
+    private static final String USERS_QUANTITY = "20";
     private UserDao userDao;
 
     public ControllerUser() {
@@ -20,7 +21,7 @@ public class ControllerUser {
             public void finish(List<User> result) {
                 listenerDeLaVista.finish(result);
             }
-        });
+        },USERS_QUANTITY);
     }
 
 }

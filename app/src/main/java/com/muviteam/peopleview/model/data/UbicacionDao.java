@@ -9,7 +9,7 @@ import com.google.gson.annotations.SerializedName;
 public class UbicacionDao implements Parcelable {
 
     @SerializedName("street")
-    private String stringCalle;
+    private CalleDao calleDao;
 
     @SerializedName("city")
     private String stringCiudad;
@@ -25,7 +25,7 @@ public class UbicacionDao implements Parcelable {
         @SuppressWarnings("unchecked")
         public UbicacionDao createFromParcel(Parcel in) {
             UbicacionDao ubicacionDao = new UbicacionDao();
-            ubicacionDao.stringCalle = ((String) in.readValue((String.class.getClassLoader())));
+            ubicacionDao.calleDao = ((CalleDao) in.readValue((String.class.getClassLoader())));
             ubicacionDao.stringCiudad = ((String) in.readValue((String.class.getClassLoader())));
             ubicacionDao.stringEstado = ((String) in.readValue((String.class.getClassLoader())));
             ubicacionDao.stringCodigoPostal = ((String) in.readValue((Integer.class.getClassLoader())));
@@ -38,12 +38,12 @@ public class UbicacionDao implements Parcelable {
 
     };
 
-    public String getStringCalle() {
-        return stringCalle;
+    public CalleDao getCalleDao() {
+        return calleDao;
     }
 
-    public void setStringCalle(String stringCalle) {
-        this.stringCalle = stringCalle;
+    public void setCalleDao(CalleDao calleDao) {
+        this.calleDao = calleDao;
     }
 
     public String getStringCiudad() {
@@ -71,7 +71,7 @@ public class UbicacionDao implements Parcelable {
     }
 
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeValue(stringCalle);
+        dest.writeValue(calleDao);
         dest.writeValue(stringCiudad);
         dest.writeValue(stringEstado);
         dest.writeValue(stringCodigoPostal);

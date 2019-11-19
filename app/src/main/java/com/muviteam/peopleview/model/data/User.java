@@ -25,10 +25,10 @@ public class User {
     private LoginDao loginDao;
 
     @SerializedName("dob")
-    private String stringDob;
+    private DodDao dodDao;
 
     @SerializedName("registered")
-    private String stringRegistro;
+    private RegistroDao registroDao;
 
     @SerializedName("phone")
     private String stringTelefono;
@@ -55,8 +55,8 @@ public class User {
             user.ubicacionDao = ((UbicacionDao) in.readValue((UbicacionDao.class.getClassLoader())));
             user.stringEmail = ((String) in.readValue((String.class.getClassLoader())));
             user.loginDao = ((LoginDao) in.readValue((LoginDao.class.getClassLoader())));
-            user.stringDob = ((String) in.readValue((String.class.getClassLoader())));
-            user.stringRegistro = ((String) in.readValue((String.class.getClassLoader())));
+            user.dodDao = ((DodDao) in.readValue((String.class.getClassLoader())));
+            user.registroDao = ((RegistroDao) in.readValue((String.class.getClassLoader())));
             user.stringTelefono = ((String) in.readValue((String.class.getClassLoader())));
             user.stringCelular = ((String) in.readValue((String.class.getClassLoader())));
             user.idDao = ((IdDao) in.readValue((IdDao.class.getClassLoader())));
@@ -71,14 +71,14 @@ public class User {
 
     };
 
-    public User(String stringGenero, NombreDao nombreDao, UbicacionDao ubicacionDao, String stringEmail, LoginDao loginDao, String stringDob, String stringRegistro, String stringTelefono, String stringCelular, IdDao idDao, ImagenDao imagenDao, String stringNacionalidad) {
+    public User(String stringGenero, NombreDao nombreDao, UbicacionDao ubicacionDao, String stringEmail, LoginDao loginDao, DodDao dodDao, RegistroDao registroDao, String stringTelefono, String stringCelular, IdDao idDao, ImagenDao imagenDao, String stringNacionalidad) {
         this.stringGenero = stringGenero;
         this.nombreDao = nombreDao;
         this.ubicacionDao = ubicacionDao;
         this.stringEmail = stringEmail;
         this.loginDao = loginDao;
-        this.stringDob = stringDob;
-        this.stringRegistro = stringRegistro;
+        this.dodDao = dodDao;
+        this.registroDao = registroDao;
         this.stringTelefono = stringTelefono;
         this.stringCelular = stringCelular;
         this.idDao = idDao;
@@ -130,20 +130,20 @@ public class User {
         this.loginDao = loginDao;
     }
 
-    public String getStringDob() {
-        return stringDob;
+    public DodDao getDodDao() {
+        return dodDao;
     }
 
-    public void setStringDob(String stringDob) {
-        this.stringDob = stringDob;
+    public void setDodDao(DodDao dodDao) {
+        this.dodDao = dodDao;
     }
 
-    public String getStringRegistro() {
-        return stringRegistro;
+    public RegistroDao getRegistroDao() {
+        return registroDao;
     }
 
-    public void setStringRegistro(String stringRegistro) {
-        this.stringRegistro = stringRegistro;
+    public void setRegistroDao(RegistroDao registroDao) {
+        this.registroDao = registroDao;
     }
 
     public String getStringTelefono() {

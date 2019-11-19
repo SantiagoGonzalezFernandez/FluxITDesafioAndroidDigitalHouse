@@ -1,8 +1,5 @@
 package com.muviteam.peopleview.model.data;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
@@ -47,31 +44,6 @@ public class User implements Serializable {
     @SerializedName("nat")
     private String stringNacionalidad;
 
-    public final static Parcelable.Creator<User> CREATOR = new Parcelable.Creator<User>() {
-
-        @SuppressWarnings("unchecked")
-        public User createFromParcel(Parcel in) {
-            User user = new User();
-            user.stringGenero = ((String) in.readValue((String.class.getClassLoader())));
-            user.nombreDao = ((NombreDao) in.readValue((NombreDao.class.getClassLoader())));
-            user.ubicacionDao = ((UbicacionDao) in.readValue((UbicacionDao.class.getClassLoader())));
-            user.stringEmail = ((String) in.readValue((String.class.getClassLoader())));
-            user.loginDao = ((LoginDao) in.readValue((LoginDao.class.getClassLoader())));
-            user.dodDao = ((DodDao) in.readValue((String.class.getClassLoader())));
-            user.registroDao = ((RegistroDao) in.readValue((String.class.getClassLoader())));
-            user.stringTelefono = ((String) in.readValue((String.class.getClassLoader())));
-            user.stringCelular = ((String) in.readValue((String.class.getClassLoader())));
-            user.idDao = ((IdDao) in.readValue((IdDao.class.getClassLoader())));
-            user.imagenDao = ((ImagenDao) in.readValue((ImagenDao.class.getClassLoader())));
-            user.stringNacionalidad = ((String) in.readValue((String.class.getClassLoader())));
-            return user;
-        }
-
-        public User[] newArray(int size) {
-            return (new User[size]);
-        }
-
-    };
 
     public User(String stringGenero, NombreDao nombreDao, UbicacionDao ubicacionDao, String stringEmail, LoginDao loginDao, DodDao dodDao, RegistroDao registroDao, String stringTelefono, String stringCelular, IdDao idDao, ImagenDao imagenDao, String stringNacionalidad) {
         this.stringGenero = stringGenero;

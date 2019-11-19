@@ -8,27 +8,27 @@ import com.google.gson.annotations.SerializedName;
 public class IdDao {
 
     @SerializedName("name")
-    private String name;
+    private String stringName;
 
     @SerializedName("value")
-    private String value;
+    private String stringValue;
 
 
 
     public String getName() {
-        return name;
+        return stringName;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.stringName = name;
     }
 
     public String getValue() {
-        return value;
+        return stringValue;
     }
 
     public void setValue(String value) {
-        this.value = value;
+        this.stringValue = value;
     }
 
 }

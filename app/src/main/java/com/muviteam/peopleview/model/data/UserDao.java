@@ -3,13 +3,12 @@ package com.muviteam.peopleview.model.data;
 
 
 import android.util.Log;
-import android.widget.Toast;
 
 import com.muviteam.peopleview.model.ContainerUser;
 import com.muviteam.peopleview.model.UserRetrofitDao;
-import com.muviteam.peopleview.model.data.User;
+
 import com.muviteam.peopleview.utils.ResultListener;
-import com.muviteam.peopleview.view.MainActivity;
+
 
 import java.util.List;
 

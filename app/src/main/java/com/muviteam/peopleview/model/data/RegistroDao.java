@@ -1,19 +1,14 @@
 package com.muviteam.peopleview.model.data;
 
-import android.os.Parcel;
-import android.os.Parcelable;
 
-import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class RegistroDao {
 
     @SerializedName("date")
-    @Expose
     private String stringDate;
 
     @SerializedName("age")
-    @Expose
     private String stringEdad;
 
 

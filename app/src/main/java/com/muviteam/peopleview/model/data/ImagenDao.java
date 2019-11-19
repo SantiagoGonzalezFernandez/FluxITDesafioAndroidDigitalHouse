@@ -1,23 +1,18 @@
 package com.muviteam.peopleview.model.data;
 
-import android.os.Parcel;
-import android.os.Parcelable;
 
-import com.google.gson.annotations.Expose;
+
 import com.google.gson.annotations.SerializedName;
 
 public class ImagenDao{
 
     @SerializedName("large")
-    @Expose
     private String stringImagenLarga;
 
     @SerializedName("medium")
-    @Expose
     private String stringImagenMediana;
 
     @SerializedName("thumbnail")
-    @Expose
     private String stringImagenAvatar;
 
 

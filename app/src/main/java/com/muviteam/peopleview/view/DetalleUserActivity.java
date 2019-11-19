@@ -11,6 +11,7 @@ import com.muviteam.peopleview.R;
 public class DetalleUserActivity extends AppCompatActivity {
 
 
+    public static final String KEY_USER = "key_user";
 
     private ImageView imageViewImagenLarga;
     private TextView textViewNombreUser;

@@ -58,11 +58,11 @@ public class MainActivity extends AppCompatActivity implements AdapterUser.Liste
 
     @Override
     public void informarUser(User user) {
-        //Intent intent = new Intent(MainActivity.this,DetalleUserActivity.class);
-       // Bundle bundle = new Bundle();
-        //bundle.putSerializable(DetalleUserActivity.KEY_USER,user);
-        //intent.putExtras(bundle);
-        //startActivity(intent);
+        Intent intent = new Intent(MainActivity.this,DetalleUserActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putSerializable(DetalleUserActivity.KEY_USER,user);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 
 

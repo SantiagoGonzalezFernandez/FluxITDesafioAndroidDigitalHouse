@@ -1,19 +1,16 @@
 package com.muviteam.peopleview.model.data;
 
-import android.os.Parcel;
-import android.os.Parcelable;
 
-import com.google.gson.annotations.Expose;
+
+
 import com.google.gson.annotations.SerializedName;
 
 public class IdDao {
 
     @SerializedName("name")
-    @Expose
     private String name;
 
     @SerializedName("value")
-    @Expose
     private String value;
 
 

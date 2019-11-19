@@ -2,7 +2,9 @@ package com.muviteam.peopleview.model.data;
 
 import com.google.gson.annotations.SerializedName;
 
-public class NombreDao  {
+import java.io.Serializable;
+
+public class NombreDao implements Serializable {
 
 
     @SerializedName("title")
@@ -14,6 +16,11 @@ public class NombreDao  {
     @SerializedName("last")
     private String stringApellido;
 
+    public NombreDao(String stringTitulo, String stringNombre, String stringApellido) {
+        this.stringTitulo = stringTitulo;
+        this.stringNombre = stringNombre;
+        this.stringApellido = stringApellido;
+    }
 
     public String getStringTitulo() {
         return stringTitulo;

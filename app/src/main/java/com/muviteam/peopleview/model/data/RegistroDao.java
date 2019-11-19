@@ -3,7 +3,9 @@ package com.muviteam.peopleview.model.data;
 
 import com.google.gson.annotations.SerializedName;
 
-public class RegistroDao {
+import java.io.Serializable;
+
+public class RegistroDao implements Serializable {
 
     @SerializedName("date")
     private String stringDate;
@@ -11,7 +13,10 @@ public class RegistroDao {
     @SerializedName("age")
     private String stringEdad;
 
-
+    public RegistroDao(String stringDate, String stringEdad) {
+        this.stringDate = stringDate;
+        this.stringEdad = stringEdad;
+    }
 
     public String getStringDate() {
         return stringDate;

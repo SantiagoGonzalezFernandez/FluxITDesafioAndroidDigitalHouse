@@ -2,7 +2,9 @@ package com.muviteam.peopleview.model.data;
 
 import com.google.gson.annotations.SerializedName;
 
-public class LoginDao {
+import java.io.Serializable;
+
+public class LoginDao implements Serializable {
 
     @SerializedName("username")
     private String stringUsername;
@@ -22,6 +24,14 @@ public class LoginDao {
     @SerializedName("sha256")
     private String stringSha256;
 
+    public LoginDao(String stringUsername, String stringPassword, String stringSalt, String stringMd5, String stringSha1, String stringSha256) {
+        this.stringUsername = stringUsername;
+        this.stringPassword = stringPassword;
+        this.stringSalt = stringSalt;
+        this.stringMd5 = stringMd5;
+        this.stringSha1 = stringSha1;
+        this.stringSha256 = stringSha256;
+    }
 
     public String getStringUsername() {
         return stringUsername;

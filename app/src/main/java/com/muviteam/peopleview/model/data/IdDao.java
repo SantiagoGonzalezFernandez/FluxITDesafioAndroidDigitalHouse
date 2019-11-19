@@ -5,7 +5,9 @@ package com.muviteam.peopleview.model.data;
 
 import com.google.gson.annotations.SerializedName;
 
-public class IdDao {
+import java.io.Serializable;
+
+public class IdDao implements Serializable {
 
     @SerializedName("name")
     private String stringName;
@@ -13,7 +15,10 @@ public class IdDao {
     @SerializedName("value")
     private String stringValue;
 
-
+    public IdDao(String stringName, String stringValue) {
+        this.stringName = stringName;
+        this.stringValue = stringValue;
+    }
 
     public String getName() {
         return stringName;

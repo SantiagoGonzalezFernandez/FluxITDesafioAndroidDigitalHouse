@@ -2,7 +2,9 @@ package com.muviteam.peopleview.model.data;
 
 import com.google.gson.annotations.SerializedName;
 
-public class UbicacionDao  {
+import java.io.Serializable;
+
+public class UbicacionDao  implements Serializable {
 
     @SerializedName("street")
     private CalleDao calleDao;
@@ -16,6 +18,12 @@ public class UbicacionDao  {
     @SerializedName("postcode")
     private String stringCodigoPostal;
 
+    public UbicacionDao(CalleDao calleDao, String stringCiudad, String stringEstado, String stringCodigoPostal) {
+        this.calleDao = calleDao;
+        this.stringCiudad = stringCiudad;
+        this.stringEstado = stringEstado;
+        this.stringCodigoPostal = stringCodigoPostal;
+    }
 
     public CalleDao getCalleDao() {
         return calleDao;

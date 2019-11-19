@@ -4,7 +4,9 @@ package com.muviteam.peopleview.model.data;
 
 import com.google.gson.annotations.SerializedName;
 
-public class ImagenDao{
+import java.io.Serializable;
+
+public class ImagenDao implements Serializable {
 
     @SerializedName("large")
     private String stringImagenLarga;
@@ -15,6 +17,11 @@ public class ImagenDao{
     @SerializedName("thumbnail")
     private String stringImagenAvatar;
 
+    public ImagenDao(String stringImagenLarga, String stringImagenMediana, String stringImagenAvatar) {
+        this.stringImagenLarga = stringImagenLarga;
+        this.stringImagenMediana = stringImagenMediana;
+        this.stringImagenAvatar = stringImagenAvatar;
+    }
 
     public String getLarge() {
         return stringImagenLarga;

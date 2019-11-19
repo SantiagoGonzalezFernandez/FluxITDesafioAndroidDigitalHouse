@@ -15,14 +15,26 @@ public class UbicacionDao  implements Serializable {
     @SerializedName("state")
     private String stringEstado;
 
+    @SerializedName("country")
+    private String stringPais;
+
     @SerializedName("postcode")
     private String stringCodigoPostal;
 
-    public UbicacionDao(CalleDao calleDao, String stringCiudad, String stringEstado, String stringCodigoPostal) {
+    public UbicacionDao(CalleDao calleDao, String stringCiudad, String stringEstado, String stringPais, String stringCodigoPostal) {
         this.calleDao = calleDao;
         this.stringCiudad = stringCiudad;
         this.stringEstado = stringEstado;
+        this.stringPais = stringPais;
         this.stringCodigoPostal = stringCodigoPostal;
+    }
+
+    public String getStringPais() {
+        return stringPais;
+    }
+
+    public void setStringPais(String stringPais) {
+        this.stringPais = stringPais;
     }
 
     public CalleDao getCalleDao() {

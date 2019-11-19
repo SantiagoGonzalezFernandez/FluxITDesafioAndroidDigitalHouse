@@ -2,11 +2,15 @@ package com.muviteam.peopleview.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.muviteam.peopleview.R;
+import com.muviteam.peopleview.model.data.User;
 
 public class DetalleUserActivity extends AppCompatActivity {
 
@@ -35,6 +39,24 @@ public class DetalleUserActivity extends AppCompatActivity {
 
         encontrarComponentesPorId();
 
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        User user = (User) bundle.getSerializable(KEY_USER);
+
+        Glide.with(imageViewImagenLarga.getContext()).load(user.getImagenDao().getLarge()).placeholder(R.drawable.load).error(R.drawable.load).into(imageViewImagenLarga);
+        textViewNombreUser.setText(user.getNombreDao().getStringNombre() + " " + user.getNombreDao().getStringApellido());
+        textViewEmailUser.setText(user.getStringEmail());
+
+        textViewEdadUser.setText(user.getDodDao().getStringEdad());
+        textViewFechaDeNacimientoUser.setText(user.getDodDao().getStringDate());
+        textViewGeneroUser.setText(user.getStringGenero());
+
+        textViewCalleUser.setText(user.getUbicacionDao().getCalleDao().getStringNombre());
+        textViewNumeroCalleUser.setText(user.getUbicacionDao().getCalleDao().getStringNumero());
+        textViewCiudadUser.setText(user.getUbicacionDao().getStringCiudad());
+        textViewEstadoUser.setText(user.getUbicacionDao().getStringEstado());
+        textViewPaisUser.setText(user.getUbicacionDao().getStringPais());
+        textViewCodigoPostalUser.setText(user.getUbicacionDao().getStringCodigoPostal());
     }
 
     private void encontrarComponentesPorId(){

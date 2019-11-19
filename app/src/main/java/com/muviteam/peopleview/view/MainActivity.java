@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -19,7 +20,6 @@ public class MainActivity extends AppCompatActivity implements AdapterUser.Liste
     private RecyclerView recyclerViewUsers;
     private AdapterUser adapterUser;
     private ControllerUser controllerUser;
-    private ListenerDeLaActivity listenerDeLaActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,10 +58,12 @@ public class MainActivity extends AppCompatActivity implements AdapterUser.Liste
 
     @Override
     public void informarUser(User user) {
-        listenerDeLaActivity.recibirUser(user);
+        //Intent intent = new Intent(MainActivity.this,DetalleUserActivity.class);
+       // Bundle bundle = new Bundle();
+        //bundle.putSerializable(DetalleUserActivity.KEY_USER,user);
+        //intent.putExtras(bundle);
+        //startActivity(intent);
     }
 
-    public interface ListenerDeLaActivity {
-        public void recibirUser(User user);
-    }
+
 }

@@ -1,9 +1,276 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.DetalleUserActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/DetalleUserActivity_ImageView_ImagenLarga"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#000"></ImageView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/DetalleUserActivity_ImageView_ImagenLarga"
+        android:background="@color/colorAccent"
+        android:backgroundTint="@color/colorAccent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/DetalleUserActivity_TextView_NombreUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@string/nombre_user"
+            android:textColor="@color/ColorBlanco"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/DetalleUserActivity_TextView_EmailUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@string/email_user"
+            android:textColor="@color/ColorBlanco"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/DetalleUserActivity_CardView_DatosPersonales"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/DetalleUserActivity_ImageView_ImagenLarga"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/datos_personales"
+                android:textColor="@color/ColorBlanco"
+                android:textSize="16sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/DetalleUserActivity_TextView_TituloEdad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/edad"
+                    android:textColor="@color/ColorBlanco" />
+
+                <TextView
+                    android:id="@+id/DetalleUserActivity_TextView_EdadUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@id/DetalleUserActivity_TextView_TituloEdad"
+                    android:text="@string/numeroedad"
+                    android:textColor="@color/ColorBlanco" />
+
+                <TextView
+                    android:id="@+id/DetalleUserActivity_TextView_TituloNacimiento"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/DetalleUserActivity_TextView_TituloEdad"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/nacimiento"
+                    android:textColor="@color/ColorBlanco" />
+
+                <TextView
+                    android:id="@+id/DetalleUserActivity_TextView_FechaDeNacimientoUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/DetalleUserActivity_TextView_TituloEdad"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@id/DetalleUserActivity_TextView_TituloNacimiento"
+                    android:text="@string/fechadenacimiento"
+                    android:textColor="@color/ColorBlanco" />
+
+                <TextView
+                    android:id="@+id/DetalleUserActivity_TextView_TituloGenero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/DetalleUserActivity_TextView_TituloNacimiento"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/genero"
+                    android:textColor="@color/ColorBlanco" />
+
+                <TextView
+                    android:id="@+id/DetalleUserActivity_TextView_GeneroUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/DetalleUserActivity_TextView_TituloNacimiento"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@id/DetalleUserActivity_TextView_TituloGenero"
+                    android:text="@string/generouser"
+                    android:textColor="@color/ColorBlanco"
+                    android:layout_marginBottom="5dp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/DetalleUserActivity_CardView_DatosPersonales"
+        android:layout_margin="10dp"
+        app:cardCornerRadius="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/ubicacion"
+                android:textColor="@color/ColorBlanco"
+                android:textSize="16sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/DetalleUserActivity_TextView_TituloCalle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/calle"
+                    android:textColor="@color/ColorBlanco" />
+
+                <TextView
+                    android:id="@+id/DetalleUserActivity_TextView_CalleUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@id/DetalleUserActivity_TextView_TituloCalle"
+                    android:text="@string/calleuser"
+                    android:textColor="@color/ColorBlanco" />
+
+                <TextView
+                    android:id="@+id/DetalleUserActivity_TextView_TituloNumeroCalle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/numero"
+                    android:textColor="@color/ColorBlanco"
+                    android:layout_below="@id/DetalleUserActivity_TextView_TituloCalle"/>
+
+                <TextView
+                    android:id="@+id/DetalleUserActivity_TextView_NumeroCalleUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@id/DetalleUserActivity_TextView_TituloNumeroCalle"
+                    android:layout_below="@id/DetalleUserActivity_TextView_TituloCalle"
+                    android:text="@string/numero_calle"
+                    android:textColor="@color/ColorBlanco" />
+
+                <TextView
+                    android:id="@+id/DetalleUserActivity_TextView_TituloCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/ciudad"
+                    android:textColor="@color/ColorBlanco"
+                    android:layout_below="@id/DetalleUserActivity_TextView_NumeroCalleUser"/>
+
+                <TextView
+                    android:id="@+id/DetalleUserActivity_TextView_CityUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@id/DetalleUserActivity_TextView_TituloCity"
+                    android:layout_below="@id/DetalleUserActivity_TextView_NumeroCalleUser"
+                    android:text="@string/ciudad_user"
+                    android:textColor="@color/ColorBlanco" />
+
+                <TextView
+                    android:id="@+id/DetalleUserActivity_TextView_TituloEstado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/estado"
+                    android:textColor="@color/ColorBlanco"
+                    android:layout_below="@id/DetalleUserActivity_TextView_TituloCity"/>
+
+                <TextView
+                    android:id="@+id/DetalleUserActivity_TextView_EstadoUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@id/DetalleUserActivity_TextView_TituloEstado"
+                    android:layout_below="@id/DetalleUserActivity_TextView_CityUser"
+                    android:text="@string/estado_user"
+                    android:textColor="@color/ColorBlanco" />
+
+                <TextView
+                    android:id="@+id/DetalleUserActivity_TextView_TituloPais"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/pais"
+                    android:textColor="@color/ColorBlanco"
+                    android:layout_below="@id/DetalleUserActivity_TextView_TituloEstado"/>
+
+                <TextView
+                    android:id="@+id/DetalleUserActivity_TextView_PaisUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@id/DetalleUserActivity_TextView_TituloPais"
+                    android:layout_below="@id/DetalleUserActivity_TextView_EstadoUser"
+                    android:text="@string/pais_user"
+                    android:textColor="@color/ColorBlanco" />
+
+                <TextView
+                    android:id="@+id/DetalleUserActivity_TextView_TituloCodigoPostal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="@string/codigo_postal"
+                    android:textColor="@color/ColorBlanco"
+                    android:layout_below="@id/DetalleUserActivity_TextView_TituloPais"/>
+
+                <TextView
+                    android:id="@+id/DetalleUserActivity_TextView_CodigoPostalUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_toEndOf="@id/DetalleUserActivity_TextView_TituloCodigoPostal"
+                    android:layout_below="@id/DetalleUserActivity_TextView_TituloPais"
+                    android:text="@string/codigo_postal_user"
+                    android:textColor="@color/ColorBlanco"
+                    android:layout_marginBottom="5dp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

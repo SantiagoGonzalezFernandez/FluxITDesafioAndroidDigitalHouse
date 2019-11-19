@@ -1,4 +1,26 @@
 <resources>
     <string name="app_name">PeopleView</string>
     <string name="username">username</string>
+    <string name="nombre_user">Nombre User</string>
+    <string name="email_user">Email User</string>
+    <string name="numeroedad">NumeroEdad</string>
+    <string name="edad">Edad:</string>
+    <string name="fechadenacimiento">FechaDeNacimiento</string>
+    <string name="nacimiento">Nacimiento:</string>
+    <string name="genero">Genero:</string>
+    <string name="generouser">GeneroUser</string>
+    <string name="ubicacion">Ubicacion</string>
+    <string name="datos_personales">Datos Personales</string>
+    <string name="calle">Calle:</string>
+    <string name="calleuser">Calle User</string>
+    <string name="numero">Numero:</string>
+    <string name="numero_calle">Numero Calle</string>
+    <string name="ciudad">Ciudad:</string>
+    <string name="ciudad_user">Ciudad User</string>
+    <string name="estado">Estado:</string>
+    <string name="estado_user">Estado User</string>
+    <string name="pais">Pais:</string>
+    <string name="pais_user">Pais User</string>
+    <string name="codigo_postal_user">Codigo Postal User</string>
+    <string name="codigo_postal">Codigo Postal:</string>
 </resources>

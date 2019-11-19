@@ -6,7 +6,7 @@ import android.os.Parcelable;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class UbicacionDao implements Parcelable {
+public class UbicacionDao  {
 
     @SerializedName("street")
     private CalleDao calleDao;
@@ -20,23 +20,6 @@ public class UbicacionDao implements Parcelable {
     @SerializedName("postcode")
     private String stringCodigoPostal;
 
-    public final static Parcelable.Creator<UbicacionDao> CREATOR = new Creator<UbicacionDao>() {
-
-        @SuppressWarnings("unchecked")
-        public UbicacionDao createFromParcel(Parcel in) {
-            UbicacionDao ubicacionDao = new UbicacionDao();
-            ubicacionDao.calleDao = ((CalleDao) in.readValue((String.class.getClassLoader())));
-            ubicacionDao.stringCiudad = ((String) in.readValue((String.class.getClassLoader())));
-            ubicacionDao.stringEstado = ((String) in.readValue((String.class.getClassLoader())));
-            ubicacionDao.stringCodigoPostal = ((String) in.readValue((Integer.class.getClassLoader())));
-            return ubicacionDao;
-        }
-
-        public UbicacionDao[] newArray(int size) {
-            return (new UbicacionDao[size]);
-        }
-
-    };
 
     public CalleDao getCalleDao() {
         return calleDao;
@@ -70,14 +53,5 @@ public class UbicacionDao implements Parcelable {
         this.stringCodigoPostal = stringCodigoPostal;
     }
 
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeValue(calleDao);
-        dest.writeValue(stringCiudad);
-        dest.writeValue(stringEstado);
-        dest.writeValue(stringCodigoPostal);
-    }
 
-    public int describeContents() {
-        return 0;
-    }
 }

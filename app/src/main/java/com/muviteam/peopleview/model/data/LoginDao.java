@@ -6,7 +6,7 @@ import android.os.Parcelable;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class LoginDao implements Parcelable{
+public class LoginDao {
 
     @SerializedName("username")
     private String stringUsername;
@@ -26,25 +26,6 @@ public class LoginDao implements Parcelable{
     @SerializedName("sha256")
     private String stringSha256;
 
-    public final static Parcelable.Creator<LoginDao> CREATOR = new Creator<LoginDao>() {
-
-        @SuppressWarnings("unchecked")
-        public LoginDao createFromParcel(Parcel in) {
-            LoginDao loginDao = new LoginDao();
-            loginDao.stringUsername = ((String) in.readValue((String.class.getClassLoader())));
-            loginDao.stringPassword = ((String) in.readValue((String.class.getClassLoader())));
-            loginDao.stringSalt = ((String) in.readValue((String.class.getClassLoader())));
-            loginDao.stringMd5 = ((String) in.readValue((String.class.getClassLoader())));
-            loginDao.stringSha1 = ((String) in.readValue((String.class.getClassLoader())));
-            loginDao.stringSha256 = ((String) in.readValue((String.class.getClassLoader())));
-            return loginDao;
-        }
-
-        public LoginDao[] newArray(int size) {
-            return (new LoginDao[size]);
-        }
-
-    };
 
     public String getStringUsername() {
         return stringUsername;
@@ -94,17 +75,6 @@ public class LoginDao implements Parcelable{
         this.stringSha256 = stringSha256;
     }
 
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeValue(stringUsername);
-        dest.writeValue(stringPassword);
-        dest.writeValue(stringSalt);
-        dest.writeValue(stringMd5);
-        dest.writeValue(stringSha1);
-        dest.writeValue(stringSha256);
-    }
 
-    public int describeContents() {
-        return 0;
-    }
 
 }

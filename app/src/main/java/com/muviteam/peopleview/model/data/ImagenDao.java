@@ -6,7 +6,7 @@ import android.os.Parcelable;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class ImagenDao implements Parcelable {
+public class ImagenDao{
 
     @SerializedName("large")
     @Expose
@@ -20,22 +20,6 @@ public class ImagenDao implements Parcelable {
     @Expose
     private String stringImagenAvatar;
 
-    public final static Parcelable.Creator<ImagenDao> CREATOR = new Creator<ImagenDao>() {
-
-        @SuppressWarnings("unchecked")
-        public ImagenDao createFromParcel(Parcel in) {
-            ImagenDao imagenDao = new ImagenDao();
-            imagenDao.stringImagenLarga = ((String) in.readValue((String.class.getClassLoader())));
-            imagenDao.stringImagenMediana = ((String) in.readValue((String.class.getClassLoader())));
-            imagenDao.stringImagenAvatar = ((String) in.readValue((String.class.getClassLoader())));
-            return imagenDao;
-        }
-
-        public ImagenDao[] newArray(int size) {
-            return (new ImagenDao[size]);
-        }
-
-    };
 
     public String getLarge() {
         return stringImagenLarga;
@@ -61,13 +45,4 @@ public class ImagenDao implements Parcelable {
         this.stringImagenAvatar = thumbnail;
     }
 
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeValue(stringImagenLarga);
-        dest.writeValue(stringImagenMediana);
-        dest.writeValue(stringImagenAvatar);
-    }
-
-    public int describeContents() {
-        return 0;
-    }
 }

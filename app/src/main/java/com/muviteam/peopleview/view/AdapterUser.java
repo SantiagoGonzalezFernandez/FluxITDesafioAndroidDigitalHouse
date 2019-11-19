@@ -72,9 +72,7 @@ public class AdapterUser extends RecyclerView.Adapter<AdapterUser.MyViewHolder> 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(v.getContext(), "clikeate", Toast.LENGTH_SHORT).show();
-                    User userSeleccionado = userList.get(getAdapterPosition());
-                    listenerDelAdapter.informarUser(userSeleccionado);
+                    Toast.makeText(v.getContext(), "Se Clikeo", Toast.LENGTH_SHORT).show();
                 }
             });
         }

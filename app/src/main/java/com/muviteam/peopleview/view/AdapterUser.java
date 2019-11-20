@@ -33,6 +33,10 @@ public class AdapterUser extends RecyclerView.Adapter<AdapterUser.MyViewHolder> 
         notifyDataSetChanged();
     }
 
+    public List<User> getUserList() {
+        return userList;
+    }
+
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -82,4 +86,11 @@ public class AdapterUser extends RecyclerView.Adapter<AdapterUser.MyViewHolder> 
     public interface ListenerDelAdapter{
         public void informarUser(User user);
     }
+
+    public void setFilter(List<User> userList){
+        this.userList = new ArrayList<>();
+        this.userList.addAll(userList);
+        notifyDataSetChanged();
+    }
+
 }

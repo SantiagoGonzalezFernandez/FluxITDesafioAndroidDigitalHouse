@@ -1,10 +1,8 @@
 package com.muviteam.peopleview.controller;
 
-import com.muviteam.peopleview.model.data.User;
+import com.muviteam.peopleview.model.ContainerUser;
 import com.muviteam.peopleview.model.data.UserDao;
 import com.muviteam.peopleview.utils.ResultListener;
-
-import java.util.List;
 
 public class ControllerUser {
 
@@ -15,13 +13,14 @@ public class ControllerUser {
         this.userDao = new UserDao();
     }
 
-    public void traerUser(final ResultListener<List<User>> listenerDeLaVista){
-        userDao.traerUsers(new ResultListener<List<User>>() {
+    public void traerUser(final ResultListener<ContainerUser> listenerDeLaVista){
+        userDao.traerUsers(new ResultListener<ContainerUser>() {
             @Override
-            public void finish(List<User> result) {
+            public void finish(ContainerUser result) {
                 listenerDeLaVista.finish(result);
             }
         },USERS_QUANTITY);
     }
+
 
 }

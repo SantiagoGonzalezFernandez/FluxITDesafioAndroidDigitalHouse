@@ -7,5 +7,8 @@ import retrofit2.http.Query;
 public interface Service {
 
     @GET("/api/")
-    Call<ContainerUser> traerUsers(@Query("results") String cantidadDeResultados);
+    Call<ContainerUser> traerUsers(@Query("results") String cantidadDeResultados,
+                                   @Query("page") String paginaActual,
+                                   @Query("seed") String Semilla);
+
 }

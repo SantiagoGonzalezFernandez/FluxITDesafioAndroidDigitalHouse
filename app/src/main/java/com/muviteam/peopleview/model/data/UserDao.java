@@ -25,13 +25,13 @@ public class UserDao extends UserRetrofitDao {
         super(BASE_URL);
     }
 
-    public void traerUsers(final ResultListener<List<User>> listenerDelController, String cantiadadDeUsuarios){
+    public void traerUsers(final ResultListener<ContainerUser> listenerDelController, String cantiadadDeUsuarios){
         Call<ContainerUser> call = usersService.traerUsers(cantiadadDeUsuarios);
         call.enqueue(new Callback<ContainerUser>() {
             @Override
             public void onResponse(Call<ContainerUser> call, Response<ContainerUser> response) {
                 ContainerUser containerUser = response.body();
-                listenerDelController.finish(containerUser.getResults());
+                listenerDelController.finish(containerUser);
             }
 
             @Override

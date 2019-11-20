@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.muviteam.peopleview.R;
 import com.muviteam.peopleview.controller.ControllerUser;
+import com.muviteam.peopleview.model.ContainerUser;
 import com.muviteam.peopleview.model.data.User;
 import com.muviteam.peopleview.utils.ResultListener;
 
@@ -66,11 +67,11 @@ public class MainActivity extends AppCompatActivity implements AdapterUser.Liste
     }
 
     public void traerUsers() {
-        controllerUser.traerUser(new ResultListener<List<User>>() {
+        controllerUser.traerUser(new ResultListener<ContainerUser>() {
             @Override
-            public void finish(List<User> result) {
-                adapterUser.setUserList(result);
-                adapterUser.setUserListFiltrada(result);
+            public void finish(ContainerUser result) {
+                adapterUser.setUserList(result.getResults());
+                adapterUser.setUserListFiltrada(result.getResults());
                 Toast.makeText(MainActivity.this, "EXITO", Toast.LENGTH_SHORT).show();
             }
         });

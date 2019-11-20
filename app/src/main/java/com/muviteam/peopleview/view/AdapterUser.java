@@ -23,10 +23,6 @@ public class AdapterUser extends RecyclerView.Adapter<AdapterUser.MyViewHolder> 
     private List<User> userList;
     private ListenerDelAdapter listenerDelAdapter;
 
-    public AdapterUser(List<User> userList) {
-        this.userList = userList;
-    }
-
     public AdapterUser(ListenerDelAdapter listenerDelAdapter) {
         userList = new ArrayList<>();
         this.listenerDelAdapter = listenerDelAdapter;

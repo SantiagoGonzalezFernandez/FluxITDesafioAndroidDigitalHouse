@@ -48,7 +48,7 @@ public class AdapterUser extends RecyclerView.Adapter<AdapterUser.MyViewHolder> 
     }
 
     public void addUserList(List<User> results) {
-        this.userList.addAll(userList);
+        this.userList.addAll(results);
         notifyDataSetChanged();
     }
 

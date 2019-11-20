@@ -8,7 +8,7 @@ public interface Service {
 
     @GET("/api/")
     Call<ContainerUser> traerUsers(@Query("results") String cantidadDeResultados,
-                                   @Query("page") String paginaActual,
+                                   @Query("page") Integer paginaActual,
                                    @Query("seed") String Semilla);
 
 }

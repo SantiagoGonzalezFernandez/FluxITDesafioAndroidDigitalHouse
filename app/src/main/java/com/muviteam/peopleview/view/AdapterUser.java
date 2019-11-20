@@ -21,10 +21,12 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class AdapterUser extends RecyclerView.Adapter<AdapterUser.MyViewHolder> {
 
     private List<User> userList;
+    private List<User> userListFiltrada;
     private ListenerDelAdapter listenerDelAdapter;
 
     public AdapterUser(ListenerDelAdapter listenerDelAdapter) {
         userList = new ArrayList<>();
+        userListFiltrada = new ArrayList<>();
         this.listenerDelAdapter = listenerDelAdapter;
     }
 
@@ -35,6 +37,15 @@ public class AdapterUser extends RecyclerView.Adapter<AdapterUser.MyViewHolder> 
 
     public List<User> getUserList() {
         return userList;
+    }
+
+    public List<User> getUserListFiltrada() {
+        return userListFiltrada;
+    }
+
+    public void setUserListFiltrada(List<User> userListFiltrada) {
+        this.userListFiltrada = userListFiltrada;
+        notifyDataSetChanged();
     }
 
     @NonNull

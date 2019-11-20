@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity implements AdapterUser.Liste
             @Override
             public void finish(List<User> result) {
                 adapterUser.setUserList(result);
+                adapterUser.setUserListFiltrada(result);
                 Toast.makeText(MainActivity.this, "EXITO", Toast.LENGTH_SHORT).show();
             }
         });
@@ -99,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements AdapterUser.Liste
 
             @Override
             public boolean onMenuItemActionCollapse(MenuItem item) {
-                adapterUser.setFilter(adapterUser.getUserList());
+                adapterUser.setFilter(adapterUser.getUserListFiltrada());
                 return true;
             }
         });
@@ -114,10 +115,8 @@ public class MainActivity extends AppCompatActivity implements AdapterUser.Liste
 
     @Override
     public boolean onQueryTextChange(String newText) {
-
         try{
-
-            List<User>listaFiltrada = filter(adapterUser.getUserList(), newText);
+            List<User>listaFiltrada = filter(adapterUser.getUserListFiltrada(), newText);
             adapterUser.setFilter(listaFiltrada);
         }catch (Exception e){
             e.printStackTrace();
@@ -133,7 +132,7 @@ public class MainActivity extends AppCompatActivity implements AdapterUser.Liste
         try {
             texto = texto.toLowerCase();
 
-            for (User user: listaFiltrada){
+            for (User user: adapterUser.getUserListFiltrada()){
                 String user2 = user.getLoginDao().getStringUsername().toLowerCase();
 
                 if(user2.contains(texto)){

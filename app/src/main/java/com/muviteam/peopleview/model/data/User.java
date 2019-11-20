@@ -12,22 +12,22 @@ public class User implements Serializable {
     private String stringGenero;
 
     @SerializedName("name")
-    private NombreDao nombreDao;
+    private Nombre nombre;
 
     @SerializedName("location")
-    private UbicacionDao ubicacionDao;
+    private Ubicacion ubicacion;
 
     @SerializedName("email")
     private String stringEmail;
 
     @SerializedName("login")
-    private LoginDao loginDao;
+    private Login login;
 
     @SerializedName("dob")
-    private DodDao dodDao;
+    private Dod dod;
 
     @SerializedName("registered")
-    private RegistroDao registroDao;
+    private Registro registro;
 
     @SerializedName("phone")
     private String stringTelefono;
@@ -36,27 +36,27 @@ public class User implements Serializable {
     private String stringCelular;
 
     @SerializedName("id")
-    private IdDao idDao;
+    private Id id;
 
     @SerializedName("picture")
-    private ImagenDao imagenDao;
+    private Imagen imagen;
 
     @SerializedName("nat")
     private String stringNacionalidad;
 
 
-    public User(String stringGenero, NombreDao nombreDao, UbicacionDao ubicacionDao, String stringEmail, LoginDao loginDao, DodDao dodDao, RegistroDao registroDao, String stringTelefono, String stringCelular, IdDao idDao, ImagenDao imagenDao, String stringNacionalidad) {
+    public User(String stringGenero, Nombre nombre, Ubicacion ubicacion, String stringEmail, Login login, Dod dod, Registro registro, String stringTelefono, String stringCelular, Id id, Imagen imagen, String stringNacionalidad) {
         this.stringGenero = stringGenero;
-        this.nombreDao = nombreDao;
-        this.ubicacionDao = ubicacionDao;
+        this.nombre = nombre;
+        this.ubicacion = ubicacion;
         this.stringEmail = stringEmail;
-        this.loginDao = loginDao;
-        this.dodDao = dodDao;
-        this.registroDao = registroDao;
+        this.login = login;
+        this.dod = dod;
+        this.registro = registro;
         this.stringTelefono = stringTelefono;
         this.stringCelular = stringCelular;
-        this.idDao = idDao;
-        this.imagenDao = imagenDao;
+        this.id = id;
+        this.imagen = imagen;
         this.stringNacionalidad = stringNacionalidad;
     }
 
@@ -72,20 +72,20 @@ public class User implements Serializable {
         this.stringGenero = stringGenero;
     }
 
-    public NombreDao getNombreDao() {
-        return nombreDao;
+    public Nombre getNombre() {
+        return nombre;
     }
 
-    public void setNombreDao(NombreDao nombreDao) {
-        this.nombreDao = nombreDao;
+    public void setNombre(Nombre nombre) {
+        this.nombre = nombre;
     }
 
-    public UbicacionDao getUbicacionDao() {
-        return ubicacionDao;
+    public Ubicacion getUbicacion() {
+        return ubicacion;
     }
 
-    public void setUbicacionDao(UbicacionDao ubicacionDao) {
-        this.ubicacionDao = ubicacionDao;
+    public void setUbicacion(Ubicacion ubicacion) {
+        this.ubicacion = ubicacion;
     }
 
     public String getStringEmail() {
@@ -96,28 +96,28 @@ public class User implements Serializable {
         this.stringEmail = stringEmail;
     }
 
-    public LoginDao getLoginDao() {
-        return loginDao;
+    public Login getLogin() {
+        return login;
     }
 
-    public void setLoginDao(LoginDao loginDao) {
-        this.loginDao = loginDao;
+    public void setLogin(Login login) {
+        this.login = login;
     }
 
-    public DodDao getDodDao() {
-        return dodDao;
+    public Dod getDod() {
+        return dod;
     }
 
-    public void setDodDao(DodDao dodDao) {
-        this.dodDao = dodDao;
+    public void setDod(Dod dod) {
+        this.dod = dod;
     }
 
-    public RegistroDao getRegistroDao() {
-        return registroDao;
+    public Registro getRegistro() {
+        return registro;
     }
 
-    public void setRegistroDao(RegistroDao registroDao) {
-        this.registroDao = registroDao;
+    public void setRegistro(Registro registro) {
+        this.registro = registro;
     }
 
     public String getStringTelefono() {
@@ -136,20 +136,20 @@ public class User implements Serializable {
         this.stringCelular = stringCelular;
     }
 
-    public IdDao getIdDao() {
-        return idDao;
+    public Id getId() {
+        return id;
     }
 
-    public void setIdDao(IdDao idDao) {
-        this.idDao = idDao;
+    public void setId(Id id) {
+        this.id = id;
     }
 
-    public ImagenDao getImagenDao() {
-        return imagenDao;
+    public Imagen getImagen() {
+        return imagen;
     }
 
-    public void setImagenDao(ImagenDao imagenDao) {
-        this.imagenDao = imagenDao;
+    public void setImagen(Imagen imagen) {
+        this.imagen = imagen;
     }
 
     public String getStringNacionalidad() {

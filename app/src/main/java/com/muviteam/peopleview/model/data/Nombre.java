@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class NombreDao implements Serializable {
+public class Nombre implements Serializable {
 
 
     @SerializedName("title")
@@ -16,7 +16,7 @@ public class NombreDao implements Serializable {
     @SerializedName("last")
     private String stringApellido;
 
-    public NombreDao(String stringTitulo, String stringNombre, String stringApellido) {
+    public Nombre(String stringTitulo, String stringNombre, String stringApellido) {
         this.stringTitulo = stringTitulo;
         this.stringNombre = stringNombre;
         this.stringApellido = stringApellido;

@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class CordenadasDao implements Serializable {
+public class Cordenadas implements Serializable {
 
     @SerializedName("latitude")
     private Double doubleLatitud;
@@ -12,7 +12,7 @@ public class CordenadasDao implements Serializable {
     @SerializedName("longitude")
     private Double doubleLogitud;
 
-    public CordenadasDao(Double doubleLatitud, Double doubleLogitud) {
+    public Cordenadas(Double doubleLatitud, Double doubleLogitud) {
         this.doubleLatitud = doubleLatitud;
         this.doubleLogitud = doubleLogitud;
     }

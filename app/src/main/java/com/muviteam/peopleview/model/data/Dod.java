@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class RegistroDao implements Serializable {
+public class Dod implements Serializable {
 
     @SerializedName("date")
     private String stringDate;
@@ -13,7 +13,7 @@ public class RegistroDao implements Serializable {
     @SerializedName("age")
     private String stringEdad;
 
-    public RegistroDao(String stringDate, String stringEdad) {
+    public Dod(String stringDate, String stringEdad) {
         this.stringDate = stringDate;
         this.stringEdad = stringEdad;
     }

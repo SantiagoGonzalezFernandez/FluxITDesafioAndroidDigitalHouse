@@ -4,10 +4,10 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class UbicacionDao  implements Serializable {
+public class Ubicacion implements Serializable {
 
     @SerializedName("street")
-    private CalleDao calleDao;
+    private Calle calle;
 
     @SerializedName("city")
     private String stringCiudad;
@@ -22,24 +22,24 @@ public class UbicacionDao  implements Serializable {
     private String stringCodigoPostal;
 
     @SerializedName("coordinates")
-    private CordenadasDao cordenadasDao;
+    private Cordenadas cordenadas;
 
 
-    public UbicacionDao(CalleDao calleDao, String stringCiudad, String stringEstado, String stringPais, String stringCodigoPostal, CordenadasDao cordenadasDao) {
-        this.calleDao = calleDao;
+    public Ubicacion(Calle calle, String stringCiudad, String stringEstado, String stringPais, String stringCodigoPostal, Cordenadas cordenadas) {
+        this.calle = calle;
         this.stringCiudad = stringCiudad;
         this.stringEstado = stringEstado;
         this.stringPais = stringPais;
         this.stringCodigoPostal = stringCodigoPostal;
-        this.cordenadasDao = cordenadasDao;
+        this.cordenadas = cordenadas;
     }
 
-    public CordenadasDao getCordenadasDao() {
-        return cordenadasDao;
+    public Cordenadas getCordenadas() {
+        return cordenadas;
     }
 
-    public void setCordenadasDao(CordenadasDao cordenadasDao) {
-        this.cordenadasDao = cordenadasDao;
+    public void setCordenadas(Cordenadas cordenadas) {
+        this.cordenadas = cordenadas;
     }
 
     public String getStringPais() {
@@ -50,12 +50,12 @@ public class UbicacionDao  implements Serializable {
         this.stringPais = stringPais;
     }
 
-    public CalleDao getCalleDao() {
-        return calleDao;
+    public Calle getCalle() {
+        return calle;
     }
 
-    public void setCalleDao(CalleDao calleDao) {
-        this.calleDao = calleDao;
+    public void setCalle(Calle calle) {
+        this.calle = calle;
     }
 
     public String getStringCiudad() {

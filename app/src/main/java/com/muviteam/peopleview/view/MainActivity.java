@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity implements AdapterUser.Liste
             texto = texto.toLowerCase();
 
             for (User user: adapterUser.getUserListFiltrada()){
-                String user2 = user.getLoginDao().getStringUsername().toLowerCase();
+                String user2 = user.getLogin().getStringUsername().toLowerCase();
 
                 if(user2.contains(texto)){
                     listaFiltrada.add(user);

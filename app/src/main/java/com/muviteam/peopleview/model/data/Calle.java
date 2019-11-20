@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class CalleDao implements Serializable {
+public class Calle implements Serializable {
 
     @SerializedName("number")
     private String stringNumero;
@@ -13,7 +13,7 @@ public class CalleDao implements Serializable {
     @SerializedName("name")
     private String stringNombre;
 
-    public CalleDao(String stringNumero, String stringNombre) {
+    public Calle(String stringNumero, String stringNombre) {
         this.stringNumero = stringNumero;
         this.stringNombre = stringNombre;
     }

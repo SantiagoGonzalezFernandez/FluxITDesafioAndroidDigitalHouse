@@ -6,10 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.muviteam.peopleview.R;
@@ -48,20 +46,20 @@ public class DetalleUserActivity extends AppCompatActivity implements AdapterUse
         Bundle bundle = intent.getExtras();
         User user = (User) bundle.getSerializable(KEY_USER);
 
-        Glide.with(imageViewImagenLarga.getContext()).load(user.getImagenDao().getLarge()).placeholder(R.drawable.load).error(R.drawable.load).into(imageViewImagenLarga);
-        textViewNombreUser.setText(user.getNombreDao().getStringNombre() + " " + user.getNombreDao().getStringApellido());
+        Glide.with(imageViewImagenLarga.getContext()).load(user.getImagen().getLarge()).placeholder(R.drawable.load).error(R.drawable.load).into(imageViewImagenLarga);
+        textViewNombreUser.setText(user.getNombre().getStringNombre() + " " + user.getNombre().getStringApellido());
         textViewEmailUser.setText(user.getStringEmail());
 
-        textViewEdadUser.setText(user.getDodDao().getStringEdad());
-        textViewFechaDeNacimientoUser.setText(user.getDodDao().getStringDate());
+        textViewEdadUser.setText(user.getDod().getStringEdad());
+        textViewFechaDeNacimientoUser.setText(user.getDod().getStringDate());
         textViewGeneroUser.setText(user.getStringGenero());
 
-        textViewCalleUser.setText(user.getUbicacionDao().getCalleDao().getStringNombre());
-        textViewNumeroCalleUser.setText(user.getUbicacionDao().getCalleDao().getStringNumero());
-        textViewCiudadUser.setText(user.getUbicacionDao().getStringCiudad());
-        textViewEstadoUser.setText(user.getUbicacionDao().getStringEstado());
-        textViewPaisUser.setText(user.getUbicacionDao().getStringPais());
-        textViewCodigoPostalUser.setText(user.getUbicacionDao().getStringCodigoPostal());
+        textViewCalleUser.setText(user.getUbicacion().getCalle().getStringNombre());
+        textViewNumeroCalleUser.setText(user.getUbicacion().getCalle().getStringNumero());
+        textViewCiudadUser.setText(user.getUbicacion().getStringCiudad());
+        textViewEstadoUser.setText(user.getUbicacion().getStringEstado());
+        textViewPaisUser.setText(user.getUbicacion().getStringPais());
+        textViewCodigoPostalUser.setText(user.getUbicacion().getStringCodigoPostal());
 
         configuroButtonUbicacionOnline(user);
 

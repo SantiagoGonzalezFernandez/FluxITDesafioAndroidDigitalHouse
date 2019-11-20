@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class IdDao implements Serializable {
+public class Id implements Serializable {
 
     @SerializedName("name")
     private String stringName;
@@ -15,7 +15,7 @@ public class IdDao implements Serializable {
     @SerializedName("value")
     private String stringValue;
 
-    public IdDao(String stringName, String stringValue) {
+    public Id(String stringName, String stringValue) {
         this.stringName = stringName;
         this.stringValue = stringValue;
     }

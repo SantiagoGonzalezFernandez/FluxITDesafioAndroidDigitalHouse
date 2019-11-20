@@ -57,8 +57,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         uiSettings.setZoomControlsEnabled(true);
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(user.getUbicacionDao().getCordenadasDao().getDoubleLatitud(), user.getUbicacionDao().getCordenadasDao().getDoubleLogitud());
-        mMap.addMarker(new MarkerOptions().position(sydney).title(user.getNombreDao().getStringNombre() + " " + user.getNombreDao().getStringApellido()));
+        LatLng sydney = new LatLng(user.getUbicacion().getCordenadas().getDoubleLatitud(), user.getUbicacion().getCordenadas().getDoubleLogitud());
+        mMap.addMarker(new MarkerOptions().position(sydney).title(user.getNombre().getStringNombre() + " " + user.getNombre().getStringApellido()));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
 }

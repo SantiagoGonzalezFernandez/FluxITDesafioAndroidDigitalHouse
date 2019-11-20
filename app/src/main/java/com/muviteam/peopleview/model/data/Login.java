@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class LoginDao implements Serializable {
+public class Login implements Serializable {
 
     @SerializedName("username")
     private String stringUsername;
@@ -24,7 +24,7 @@ public class LoginDao implements Serializable {
     @SerializedName("sha256")
     private String stringSha256;
 
-    public LoginDao(String stringUsername, String stringPassword, String stringSalt, String stringMd5, String stringSha1, String stringSha256) {
+    public Login(String stringUsername, String stringPassword, String stringSalt, String stringMd5, String stringSha1, String stringSha256) {
         this.stringUsername = stringUsername;
         this.stringPassword = stringPassword;
         this.stringSalt = stringSalt;

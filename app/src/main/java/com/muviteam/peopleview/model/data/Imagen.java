@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-public class ImagenDao implements Serializable {
+public class Imagen implements Serializable {
 
     @SerializedName("large")
     private String stringImagenLarga;
@@ -17,7 +17,7 @@ public class ImagenDao implements Serializable {
     @SerializedName("thumbnail")
     private String stringImagenAvatar;
 
-    public ImagenDao(String stringImagenLarga, String stringImagenMediana, String stringImagenAvatar) {
+    public Imagen(String stringImagenLarga, String stringImagenMediana, String stringImagenAvatar) {
         this.stringImagenLarga = stringImagenLarga;
         this.stringImagenMediana = stringImagenMediana;
         this.stringImagenAvatar = stringImagenAvatar;

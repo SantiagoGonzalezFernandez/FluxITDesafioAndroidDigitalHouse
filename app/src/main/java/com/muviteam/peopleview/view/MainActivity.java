@@ -1,5 +1,6 @@
 package com.muviteam.peopleview.view;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.MenuItemCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements AdapterUser.Liste
     private AdapterUser adapterUser;
     private ControllerUser controllerUser;
     private SwipeRefreshLayout swipeRefreshLayout;
+    private LinearLayoutManager linearLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,8 +64,33 @@ public class MainActivity extends AppCompatActivity implements AdapterUser.Liste
     }
 
     private void configurarRecyclerView() {
-        recyclerViewUsers.setLayoutManager(new LinearLayoutManager(this, recyclerViewUsers.VERTICAL, false));
+        linearLayoutManager = new LinearLayoutManager(this, recyclerViewUsers.VERTICAL, false);
+        recyclerViewUsers.setLayoutManager(linearLayoutManager);
         recyclerViewUsers.setAdapter(adapterUser);
+
+        recyclerViewUsers.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+                Integer ultimaPosicionVisible = linearLayoutManager.findLastVisibleItemPosition();
+                Integer ultimoElementoDelRecycler = linearLayoutManager.getItemCount();
+
+                if(ultimaPosicionVisible.equals(ultimoElementoDelRecycler - 5)){
+                    agregarUsers();
+                }
+            }
+        });
+
+    }
+
+    private void agregarUsers() {
+        controllerUser.traerUser(new ResultListener<ContainerUser>() {
+            @Override
+            public void finish(ContainerUser result) {
+                adapterUser.addUserList(result.getResults());
+                Toast.makeText(MainActivity.this, "Mira, ahora hay mas...", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public void traerUsers() {

@@ -47,6 +47,11 @@ public class AdapterUser extends RecyclerView.Adapter<AdapterUser.MyViewHolder> 
         notifyDataSetChanged();
     }
 
+    public void addUserList(List<User> results) {
+        this.userList.addAll(userList);
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

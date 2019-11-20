@@ -12,19 +12,25 @@ public class ControllerUser {
     private String seed = "";
     private Integer page = 1;
 
+    private Boolean trajoMasPost = true;
+
     public ControllerUser() {
         this.userDao = new UserDao();
     }
 
-    public void traerUser(final ResultListener<ContainerUser> listenerDeLaVista){
-        userDao.traerUsers(new ResultListener<ContainerUser>() {
-            @Override
-            public void finish(ContainerUser result) {
-                seed = result.getInfo().getStringSeed();
-                page++;
-                listenerDeLaVista.finish(result);
-            }
-        },USERS_QUANTITY,page,seed);
+    public void traerUser(final ResultListener<ContainerUser> listenerDeLaVista) {
+        if (trajoMasPost) {
+            trajoMasPost = false;
+            userDao.traerUsers(new ResultListener<ContainerUser>() {
+                @Override
+                public void finish(ContainerUser result) {
+                    seed = result.getInfo().getStringSeed();
+                    page++;
+                    listenerDeLaVista.finish(result);
+                    trajoMasPost = true;
+                }
+            }, USERS_QUANTITY, page, seed);
+        }
     }
 
 

@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements AdapterUser.Liste
                 Integer ultimaPosicionVisible = linearLayoutManager.findLastVisibleItemPosition();
                 Integer ultimoElementoDelRecycler = linearLayoutManager.getItemCount();
 
-                if(ultimaPosicionVisible.equals(ultimoElementoDelRecycler - 5)){
+                if(ultimaPosicionVisible >= ultimoElementoDelRecycler - 5){
                     agregarUsers();
                 }
             }

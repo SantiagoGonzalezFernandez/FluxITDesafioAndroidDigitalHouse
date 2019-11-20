@@ -26,4 +26,5 @@
     <string name="title_activity_maps">Map</string>
     <string name="ubicacion_online">Ubicacion Online</string>
     <string name="buscador">Buscador</string>
+    <string name="people">People</string>
 </resources>

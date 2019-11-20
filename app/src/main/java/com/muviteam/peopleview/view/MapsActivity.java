@@ -17,7 +17,7 @@ import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.muviteam.peopleview.R;
-import com.muviteam.peopleview.model.data.User;
+import com.muviteam.peopleview.model.data.pojo.User;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 

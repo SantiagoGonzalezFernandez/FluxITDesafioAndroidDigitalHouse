@@ -16,7 +16,7 @@ import android.widget.Toast;
 import com.muviteam.peopleview.R;
 import com.muviteam.peopleview.controller.ControllerUser;
 import com.muviteam.peopleview.model.ContainerUser;
-import com.muviteam.peopleview.model.data.User;
+import com.muviteam.peopleview.model.data.pojo.User;
 import com.muviteam.peopleview.utils.ResultListener;
 
 import java.util.ArrayList;

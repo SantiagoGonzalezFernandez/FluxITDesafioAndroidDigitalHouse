@@ -1,7 +1,7 @@
 package com.muviteam.peopleview.model;
 
-import com.muviteam.peopleview.model.data.Info;
-import com.muviteam.peopleview.model.data.User;
+import com.muviteam.peopleview.model.data.pojo.Info;
+import com.muviteam.peopleview.model.data.pojo.User;
 
 import java.util.List;
 

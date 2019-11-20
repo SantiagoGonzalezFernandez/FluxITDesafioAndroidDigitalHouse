@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.muviteam.peopleview.R;
-import com.muviteam.peopleview.model.data.User;
+import com.muviteam.peopleview.model.data.pojo.User;
 
 public class DetalleUserActivity extends AppCompatActivity implements AdapterUser.ListenerDelAdapter{
 

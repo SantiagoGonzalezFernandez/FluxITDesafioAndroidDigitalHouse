@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.muviteam.peopleview.R;
-import com.muviteam.peopleview.model.data.User;
+import com.muviteam.peopleview.model.data.pojo.User;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.muviteam.peopleview.model.data;
+package com.muviteam.peopleview.model.data.pojo;
 
 
 import com.google.gson.annotations.SerializedName;

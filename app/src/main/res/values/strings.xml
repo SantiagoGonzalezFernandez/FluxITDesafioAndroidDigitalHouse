@@ -23,4 +23,6 @@
     <string name="pais_user">Pais User</string>
     <string name="codigo_postal_user">Codigo Postal User</string>
     <string name="codigo_postal">Codigo Postal:</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="ubicacion_online">Ubicacion Online</string>
 </resources>

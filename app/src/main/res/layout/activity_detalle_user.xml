@@ -135,6 +135,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/DetalleUserActivity_CardView_Ubicacion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/DetalleUserActivity_CardView_DatosPersonales"
@@ -278,5 +279,16 @@
 
     </androidx.cardview.widget.CardView>
 
+    <Button
+        android:id="@+id/DetalleUserActivity_Button_UbicacionOnline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/DetalleUserActivity_CardView_Ubicacion"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/ubicacion_online"
+        android:background="@color/colorAccent"
+        android:layout_marginTop="5dp">
+    </Button>
 
 </RelativeLayout>

@@ -21,12 +21,25 @@ public class UbicacionDao  implements Serializable {
     @SerializedName("postcode")
     private String stringCodigoPostal;
 
-    public UbicacionDao(CalleDao calleDao, String stringCiudad, String stringEstado, String stringPais, String stringCodigoPostal) {
+    @SerializedName("coordinates")
+    private CordenadasDao cordenadasDao;
+
+
+    public UbicacionDao(CalleDao calleDao, String stringCiudad, String stringEstado, String stringPais, String stringCodigoPostal, CordenadasDao cordenadasDao) {
         this.calleDao = calleDao;
         this.stringCiudad = stringCiudad;
         this.stringEstado = stringEstado;
         this.stringPais = stringPais;
         this.stringCodigoPostal = stringCodigoPostal;
+        this.cordenadasDao = cordenadasDao;
+    }
+
+    public CordenadasDao getCordenadasDao() {
+        return cordenadasDao;
+    }
+
+    public void setCordenadasDao(CordenadasDao cordenadasDao) {
+        this.cordenadasDao = cordenadasDao;
     }
 
     public String getStringPais() {
